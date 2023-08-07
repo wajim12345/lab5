@@ -34,7 +34,7 @@ function RegularLevel() {
     currentLevel.innerHTML = "";
     let first_option = document.createElement("option");
     first_option.value = "";
-    first_option.textContent = "Select an Option";
+    first_option.textContent = "Select an option";
     currentLevel.append(first_option);
 
     for (let i = 0; i <= 20; i++) {
