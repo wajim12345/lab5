@@ -15,23 +15,28 @@ function ChangeTypeToSpecial() {
     if (regButton.classList.contains("clicked")) {
         speButton.classList.add("clicked");
         regButton.classList.remove("clicked");
-        regBool = false;
     }
+    regBool = false;
     SpeicalLevel();
 }
 
 function ChangeTypeToRegular() {
     if (speButton.classList.contains("clicked")) {
         regButton.classList.add("clicked");
-        speButton.classList.remove("clicked");
-        regBool = true;
+        speButton.classList.remove("clicked");  
     }
+    regBool = true;
     RegularLevel();
 }
 
 function RegularLevel() {
 
     currentLevel.innerHTML = "";
+    let first_option = document.createElement("option");
+    first_option.value = "";
+    first_option.textContent = "Select an Option";
+    currentLevel.append(first_option);
+
     for (let i = 0; i <= 20; i++) {
         let option = document.createElement("option");
         option.value = i;
@@ -42,6 +47,10 @@ function RegularLevel() {
 function SpeicalLevel() {
 
     currentLevel.innerHTML = "";
+    let first_option = document.createElement("option");
+    first_option.value = "";
+    first_option.textContent = "Select an option";
+    currentLevel.append(first_option);
     for (let i = 0; i <= 10; i++) {
         let option = document.createElement("option");
         option.value = i;
@@ -53,6 +62,11 @@ function SpeicalLevel() {
 function SetDesiredLevel() {
     let base = parseInt(currentLevel.value);
     desiredLevel.innerHTML = "";
+    let first_option = document.createElement("option");
+    first_option.value = "";
+    first_option.textContent = "Select an option";
+    desiredLevel.append(first_option);
+
     let maxValue = 0;
     if (regBool === true) {
         maxValue = 20;
